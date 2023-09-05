@@ -22,7 +22,7 @@ func isAnagram(s string, t string) bool {
 }
 
 // Second approach
-func isAnagram(s string, t string) bool {
+func isAnagram2(s string, t string) bool {
 	if len(s) != len(t) {
 		return false
 	}
