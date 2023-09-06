@@ -1,2 +1,2 @@
 # Problem Solving
-This repository contains my solutions to some LeeCode problems
+This repository contains my solutions to some LeetCode problems
