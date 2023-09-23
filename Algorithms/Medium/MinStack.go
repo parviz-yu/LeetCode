@@ -1,5 +1,7 @@
 package medium
 
+import "github.com/parviz-yu/LeetCode/Algorithms/helpers"
+
 type MinStack struct {
 	stack []int
 	min   []int
@@ -19,7 +21,7 @@ func (this *MinStack) Push(val int) {
 		return
 	}
 
-	this.min = append(this.min, minValue(this.GetMin(), val))
+	this.min = append(this.min, helpers.Min(this.GetMin(), val))
 }
 
 func (this *MinStack) Pop() {
@@ -33,14 +35,6 @@ func (this *MinStack) Top() int {
 
 func (this *MinStack) GetMin() int {
 	return this.min[len(this.min)-1]
-}
-
-func minValue(a, b int) int {
-	if a < b {
-		return a
-	}
-
-	return b
 }
 
 /**

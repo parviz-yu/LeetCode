@@ -1,5 +1,7 @@
 package medium
 
+import "github.com/parviz-yu/LeetCode/Algorithms/helpers"
+
 // Time complexity: O(n)
 // Space complexity: O(1)
 func maxArea(height []int) int {
@@ -7,8 +9,8 @@ func maxArea(height []int) int {
 	max_area := 0
 
 	for l < r {
-		area := (r - l) * min(height[l], height[r])
-		max_area = max(max_area, area)
+		area := (r - l) * helpers.Min(height[l], height[r])
+		max_area = helpers.Max(max_area, area)
 		if height[l] < height[r] {
 			l++
 		} else {
@@ -17,20 +19,4 @@ func maxArea(height []int) int {
 	}
 
 	return max_area
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-
-	return b
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-
-	return b
 }
