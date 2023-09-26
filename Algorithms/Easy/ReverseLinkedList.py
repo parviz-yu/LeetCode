@@ -9,12 +9,12 @@ class ListNode:
 # Space complexity: O(1)
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        reversed_head = None       
+        prev, curr = None, head
 
-        while head:
-            curr = ListNode(head.val)
-            curr.next = reversed_head
-            reversed_head = curr
-            head = head.next
+        while curr:
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
 
-        return reversed_head
+        return prev
