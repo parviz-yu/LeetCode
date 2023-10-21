@@ -1,4 +1,4 @@
-# Time complexity: O(n)
+# Time complexity: O(n + m)
 # Space complexity: O(1)
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
