@@ -7,7 +7,7 @@ type MinStack struct {
 	min   []int
 }
 
-func Constructor() MinStack {
+func NewMinStack() MinStack {
 	return MinStack{
 		stack: make([]int, 0),
 		min:   make([]int, 0),
@@ -36,12 +36,3 @@ func (this *MinStack) Top() int {
 func (this *MinStack) GetMin() int {
 	return this.min[len(this.min)-1]
 }
-
-/**
- * Your MinStack object will be instantiated and called as such:
- * obj := Constructor();
- * obj.Push(val);
- * obj.Pop();
- * param_3 := obj.Top();
- * param_4 := obj.GetMin();
- */

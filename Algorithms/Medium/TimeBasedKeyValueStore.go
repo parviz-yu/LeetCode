@@ -9,7 +9,7 @@ type TimeMap struct {
 	hashTable map[string][]tuple
 }
 
-func Constructor() TimeMap {
+func NewTimeMap() TimeMap {
 	return TimeMap{
 		hashTable: make(map[string][]tuple),
 	}
