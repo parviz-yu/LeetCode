@@ -15,3 +15,12 @@ func Min(a, b int) int {
 
 	return b
 }
+
+func Sum(nums []int) int {
+	total := 0
+	for _, val := range nums {
+		total += val
+	}
+
+	return total
+}
