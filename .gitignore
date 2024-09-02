@@ -3,3 +3,4 @@
 test.go
 test.py
 *.sh
+.idea
