@@ -1,7 +1,7 @@
 package easy
 
-// Time complexity: O(n)
-// Space complexity: O(n)
+// Time complexity: O(m + n)
+// Space complexity: O(m + n)
 func merge_1(nums1 []int, m int, nums2 []int, n int) {
 	temp := make([]int, len(nums1))
 	copy(temp, nums1)
@@ -31,7 +31,7 @@ func merge_1(nums1 []int, m int, nums2 []int, n int) {
 	}
 }
 
-// Time complexity: O(n)
+// Time complexity: O(m + n)
 // Space complexity: O(1)
 func merge_2(nums1 []int, m int, nums2 []int, n int) {
 	lastIdx := m + n - 1

@@ -2,14 +2,18 @@
 # Space complexity: O(n)
 class Solution:
     def maxNumberOfBalloons(self, text: str) -> int:
-        pattern = "balloon"
-        occurances = {c: 0 for c in pattern}
+        pattern = self.counter("balloon")
+        occur = self.counter(text)
 
-        for char in text:
-            if char in occurances:
-                occurances[char] += 1
+        res = len(text)
+        for k in pattern:
+            res = min(res, occur.get(k, 0) // pattern[k])
 
-        occurances["l"] //= 2
-        occurances["o"] //= 2
+        return res
 
-        return min(occurances.values())
+    def counter(self, word: str) -> dict[str, int]:
+        res = {}
+        for c in word:
+            res[c] = res.get(c, 0) + 1
+
+        return res

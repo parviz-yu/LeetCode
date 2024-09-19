@@ -1,7 +1,7 @@
 # Time complexity: O(nlogn)
 # Space complexity: O(n)
 class Solution:
-    def sortArray(self, nums: list[int]) -> list[int]:
+    def sortArray_1(self, nums: list[int]) -> list[int]:
         def merge_sort(nums: list[int], l: int, r: int, temp: list[int]) -> None:
             if l < r:
                 m = (l + r) // 2
@@ -43,4 +43,26 @@ class Solution:
 
         temp_list = [0] * len(nums)
         merge_sort(nums, 0, len(nums) - 1, temp_list)
+        return nums
+
+    def sortArray_2(self, nums: list[int]) -> list[int]:
+
+        def quick_sort(nums, low, high):
+            if low < high:
+                d = partitiion(nums, low, high)
+                quick_sort(nums, low, d - 1)
+                quick_sort(nums, d + 1, high)
+
+        def partitiion(nums, low, high):
+            pivot = nums[high]
+            firstLarger = low
+            for i in range(low, high):
+                if nums[i] < pivot:
+                    nums[i], nums[firstLarger] = nums[firstLarger], nums[i]
+                    firstLarger += 1
+
+            nums[firstLarger], nums[high] = nums[high], nums[firstLarger]
+            return firstLarger
+
+        quick_sort(nums, 0, len(nums) - 1)
         return nums
