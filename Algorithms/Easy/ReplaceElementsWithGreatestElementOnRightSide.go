@@ -1,7 +1,5 @@
 package easy
 
-import "github.com/parviz-yu/LeetCode/Algorithms/helpers"
-
 // Time complexity: O(n)
 // Space complexity: O(1)
 func replaceElements(arr []int) []int {
@@ -9,7 +7,7 @@ func replaceElements(arr []int) []int {
 	for i := len(arr) - 1; i > -1; i-- {
 		temp := arr[i]
 		arr[i] = maxVal
-		maxVal = helpers.Max(temp, maxVal)
+		maxVal = max(temp, maxVal)
 	}
 
 	return arr

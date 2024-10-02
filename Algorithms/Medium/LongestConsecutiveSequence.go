@@ -1,7 +1,5 @@
 package medium
 
-import "github.com/parviz-yu/LeetCode/Algorithms/helpers"
-
 // Time complexity: O(n)
 // Space complexity: O(n)
 func longestConsecutive(nums []int) int {
@@ -21,7 +19,7 @@ func longestConsecutive(nums []int) int {
 				next++
 			}
 
-			longest_seq = helpers.Max(longest_seq, next-num)
+			longest_seq = max(longest_seq, next-num)
 		}
 	}
 

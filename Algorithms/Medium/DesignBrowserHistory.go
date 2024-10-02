@@ -1,7 +1,5 @@
 package medium
 
-import "github.com/parviz-yu/LeetCode/Algorithms/helpers"
-
 type BrowserHistory struct {
 	history []string
 	ptr     int
@@ -29,13 +27,13 @@ func (this *BrowserHistory) Visit(url string) {
 
 // Time Complexity: O(1)
 func (this *BrowserHistory) Back(steps int) string {
-	this.ptr = helpers.Max(0, this.ptr-steps)
+	this.ptr = max(0, this.ptr-steps)
 	return this.history[this.ptr]
 }
 
 // Time Complexity: O(1)
 func (this *BrowserHistory) Forward(steps int) string {
-	this.ptr = helpers.Min(this.len-1, this.ptr+steps)
+	this.ptr = min(this.len-1, this.ptr+steps)
 	return this.history[this.ptr]
 }
 

@@ -21,7 +21,7 @@ func pairSum(head *helpers.ListNode) int {
 
 	max_sum := 0
 	for head != nil && prev != nil {
-		max_sum = helpers.Max(max_sum, head.Val+prev.Val)
+		max_sum = max(max_sum, head.Val+prev.Val)
 		head = head.Next
 		prev = prev.Next
 	}
