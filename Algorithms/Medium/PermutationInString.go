@@ -1,7 +1,7 @@
 package medium
 
 // Time: O(n)
-// Space: O(n)
+// Space: O(1)
 func checkInclusion(s1 string, s2 string) bool {
 	freq := make(map[byte]int)
 	for i := range s1 {
