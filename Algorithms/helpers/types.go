@@ -34,3 +34,9 @@ func (q *Queue) Dequeue() int {
 
 	return node.Val
 }
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
