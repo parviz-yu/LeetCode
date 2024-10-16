@@ -1,19 +1,19 @@
 package medium
 
-type Node struct {
+type NodeRandom struct {
 	Val    int
-	Next   *Node
-	Random *Node
+	Next   *NodeRandom
+	Random *NodeRandom
 }
 
 // Time complexity: O(n)
 // Space complexity: O(n)
-func copyRandomList(head *Node) *Node {
-	hashMap := make(map[*Node]*Node, 0)
+func copyRandomList(head *NodeRandom) *NodeRandom {
+	hashMap := make(map[*NodeRandom]*NodeRandom, 0)
 
 	curr := head
 	for curr != nil {
-		hashMap[curr] = &Node{curr.Val, nil, nil}
+		hashMap[curr] = &NodeRandom{curr.Val, nil, nil}
 		curr = curr.Next
 	}
 
