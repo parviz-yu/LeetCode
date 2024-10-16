@@ -1,6 +1,3 @@
-*.txt
 .vscode
-test.go
-test.py
-*.sh
 .idea
+/sandbox
