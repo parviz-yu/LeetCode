@@ -1,6 +1,8 @@
 package medium
 
-import "container/heap"
+import (
+	"container/heap"
+)
 
 type Heap []int
 
@@ -14,11 +16,13 @@ func (h *Heap) Pop() any {
 	return x
 }
 
+// Space: O(k)
 type KthLargest struct {
 	MinHeap *Heap
 	k       int
 }
 
+// Time: O(logk)
 func Constructor(k int, nums []int) KthLargest {
 	obj := KthLargest{
 		MinHeap: &Heap{},
@@ -32,6 +36,7 @@ func Constructor(k int, nums []int) KthLargest {
 	return obj
 }
 
+// Time: O(logk)
 func (this *KthLargest) Add(val int) int {
 	heap.Push(this.MinHeap, val)
 	if this.MinHeap.Len() > this.k {
