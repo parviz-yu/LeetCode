@@ -1,6 +1,8 @@
 package medium
 
-import "container/heap"
+import (
+	"container/heap"
+)
 
 type minHeap []string
 
@@ -22,6 +24,7 @@ func (m *minHeap) Pop() any {
 // Time: O(nlog(k))
 // Space: O(n)
 func kthLargestNumber(nums []string, k int) string {
+
 	var h minHeap
 	for _, num := range nums {
 		heap.Push(&h, num)
