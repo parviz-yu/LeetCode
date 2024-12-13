@@ -26,6 +26,7 @@ func (m *minHeap) Pop() any {
 }
 
 // Time: O(n*log(n))
+// Space: O(n)
 func findScore(nums []int) int64 {
 	tuples := make([]tuple, 0, len(nums))
 	for i, n := range nums {
