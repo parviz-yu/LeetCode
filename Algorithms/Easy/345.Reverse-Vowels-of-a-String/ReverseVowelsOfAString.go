@@ -1,4 +1,4 @@
-package medium
+package easy
 
 import "container/heap"
 
