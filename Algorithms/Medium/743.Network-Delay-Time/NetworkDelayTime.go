@@ -25,7 +25,7 @@ func networkDelayTime(times [][]int, n int, k int) int {
 	graph := make(map[int][]tuple, n)
 	for _, item := range times {
 		u, v, w := item[0], item[1], item[2]
-		graph[u] = append(graph[u], tuple{w, v})
+		graph[u] = append(graph[u], tuple{v, w})
 	}
 
 	distances := make(map[int]int, n)
@@ -41,7 +41,7 @@ func networkDelayTime(times [][]int, n int, k int) int {
 		}
 
 		for _, ngh := range graph[vertex] {
-			nghDst, nghVertex := ngh[0], ngh[1]
+			nghVertex, nghDst := ngh[0], ngh[1]
 			newDst := currDst + nghDst
 			if newDst < getDst(distances, nghVertex) {
 				distances[nghVertex] = newDst
